@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   console.log("Bài 1:");
+      //   let n;
+
+      //   n = +prompt("Nhập số n (2 <= n <= 100):");
+      //   if (n < 2 || n > 100) {
+      //     console.log("n không hợp lệ. Vui lòng nhập lại.");
+      //   }
+      //   while (n < 2 || n > 100);
+
+      //   for (let i = 2; i <= n; i++) {
+      //     if (i ** 2 % 2 === 0) {
+      //       console.log(i ** 2);
+      //     }
+      //   }
+      //   console.log("Bài 2:");
+      //   let n2;
+
+      //   n2 = +prompt("Nhập số N (2 <= N <= 100):");
+      //   if (n2 < 2 || n2 > 100) {
+      //     console.log("N không hợp lệ. Vui lòng nhập lại.");
+      //   }
+      //   while (n2 < 2 || n2 > 100);
+
+      //   for (let i = 2; i <= n2; i += 2) {
+      //     console.log(i * i);
+      //   }
+
+      //   console.log("Bài 3:");
+      //   for (let i = 0; i < 10; i++) {
+      //     let randomColor =
+      //       "#" + Math.floor(Math.random() * 16777215).toString(16);
+      //     console.log("%c Màu ngẫu nhiên", "color:" + randomColor);
+      //   }
+      //   console.log("Bài 4:");
+      //   for (let i = 1; i <= 100; i++) {
+      //     let output = "";
+      //     if (i % 3 === 0) output += "Fizz";
+      //     if (i % 5 === 0) output += "Buzz";
+      //     console.log(output || i);
+      //   }
+      //   console.log("Bài 5:");
+      //   let n5 = +prompt("Nhập số N:");
+      //   let isPrime = true;
+      //   if (n5 < 2) {
+      //     isPrime = false;
+      //   } else {
+      //     for (let i = 2; i <= Math.sqrt(n5); i++) {
+      //       if (n5 % i === 0) {
+      //         isPrime = false;
+      //         break;
+      //       }
+      //     }
+      //   }
+      //   console.log(
+      //     isPrime ? "N là số nguyên tố." : "N không phải là số nguyên tố."
+      //   );
+      //   console.log("Bài 6:");
+      //   let n6 = +prompt("Nhập số N:");
+      //   let sum = 0;
+      //   for (let i = 1; i <= n6 / 2; i++) {
+      //     if (n6 % i === 0) {
+      //       sum += i;
+      //     }
+      //   }
+      //   console.log(
+      //     sum === n6 ? "N là số hoàn hảo." : "N không phải là số hoàn hảo."
+      //   );
+      //   console.log("Bài 7:");
+      //   let n7 = +prompt("Nhập số nguyên dương N:");
+      //   let factorial = 1;
+      //   for (let i = 1; i <= n7; i++) {
+      //     factorial *= i;
+      //   }
+      //   console.log("Giai thừa của N là: " + factorial);
+        console.log("Bài 8:");
+        let a = 0,
+          b = 1,
+          c;
+       
+        console.log(b);
+
+        for (let i = 2; i <= 20; i++) {
+          c = a + b;
+          a = b;
+          b = c;
+          console.log(c);
+        }
+        console.log("Bài 9:");
+// Hình tam giác vuông có cạnh góc vuông ở dưới bên trái
+for (let i = 1; i <= 10; i++) {
+  let line = '';
+  for (let j = 1; j <= i; j++) {
+    line += '*';
+  }
+  console.log(line);
+}
+console.log('\n');
+
+// Hình tam giác vuông có cạnh góc vuông ở trên bên trái
+for (let i = 10; i >= 1; i--) {
+  let line = '';
+  for (let j = 1; j <= i; j++) {
+    line += '*';
+  }
+  console.log(line);
+}
+console.log('\n');
+
+// Hình tam giác vuông có cạnh góc vuông ở dưới bên phải
+for (let i = 1; i <= 10; i++) {
+  let line = '';
+  for (let j = 1; j <= 10 - i; j++) {
+    line += ' ';
+  }
+  for (let j = 1; j <= i; j++) {
+    line += '*';
+  }
+  console.log(line);
+}
+console.log('\n');
+
+// Hình tam giác vuông có cạnh góc vuông ở trên bên phải
+for (let i = 10; i >= 1; i--) {
+  let line = '';
+  for (let j = 1; j <= 10 - i; j++) {
+    line += ' ';
+  }
+  for (let j = 1; j <= i; j++) {
+    line += '*';
+  }
+  console.log(line);
+}
+
+    
+      console.log("Bài 11 :");
+      let x = +prompt("Game đoán số 1-10 (bạn chỉ có 3 cơ hội đoán):");
+      let y = Math.round(Math.random() * 11);
+      let turn = 3;
+      while (turn > 0) {
+        console.log(y);
+        turn--;
+        if (turn == 0) {
+          alert("Bạn đã thua.  Đáp án đúng là " + y);
+          break;
+        }
+
+        if (x === y) {
+          alert("Chúc mừng. Đáp án đúng là " + y);
+          break;
+        } else {
+          if (x > y) {
+            alert("Số cần tìm nhỏ hơn");
+            x = +prompt(`Bạn còn ${turn} lượt. Hãy đoán lại `);
+          } else {
+            alert("Số cần tìm lớn hơn");
+            x = +prompt(`Bạn còn ${turn} lượt. Hãy đoán lại `);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

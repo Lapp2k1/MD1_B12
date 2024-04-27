@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //------------- Bài 1--------------------
+      for (let i = 0; i <= 100; i++) {
+        if (i === 99) {
+          alert("Đã hoàn thành");
+        }
+        console.log(i);
+      }
+      //------------- Bài 2--------------------
+      let temp = prompt("Nhập nhiệt độ hiện tại:");
+      temp = Number(temp);
+
+      if (temp > 100) {
+        alert("Vui lòng giảm nhiệt độ.");
+      } else if (temp < 20) {
+        alert("Vui lòng tăng nhiệt độ.");
+      }
+      //------------- Bài 3--------------------
+      let fibonacci = [0, 1];
+for (let i = 2; i < 20; i++) { 
+  fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+}
+console.log(fibonacci);
+      //------------- Bài 4--------------------
+      let a = 0,
+        b = 1,
+        f = 1;
+      while (f % 5 !== 0) {
+        f = a + b;
+        a = b;
+        b = f;
+      }
+      console.log(f);
+      //------------- Bài 5--------------------
+      let fiboSum = 0,
+        a1 = 0,
+        b1 = 1,
+        f1 = 1;
+      for (let i = 0; i < 20; i++) {
+        fiboSum += f1;
+        f1 = a1 + b1;
+        a1 = b1;
+        b1 = f1;
+      }
+      console.log(fiboSum);
+      //------------- Bài 6--------------------
+      let sum = 0,
+        count = 0,
+        number = 0;
+      while (count < 30) {
+        if (number % 7 === 0) {
+          sum += number;
+          count++;
+        }
+        number++;
+      }
+      console.log(sum);
+      //------------- Bài 7--------------------
+
+      for (let i = 1; i <= 100; i++) {
+        let output = "";
+        if (i % 3 === 0) output += "Fizz";
+        if (i % 5 === 0) output += "Buzz";
+        console.log(output || i);
+      }
+      //------------- Bài 8--------------------
+
+      document.getElementById("playButton").onclick = function () {
+        let min = parseInt(prompt("Nhập giới hạn dưới của khoảng đoán:"));
+        let max = parseInt(prompt("Nhập giới hạn trên của khoảng đoán:"));
+        if (isNaN(min) || isNaN(max)) {
+          alert("Vui lòng nhập số hợp lệ.");
+          return;
+        }
+        let secretNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        let guess;
+
+        while (true) {
+          guess = parseInt(
+            prompt("Đoán số trong khoảng từ " + min + " đến " + max + ":")
+          );
+          if (guess === secretNumber) {
+            alert("Chúc mừng! Bạn đã đoán đúng số.");
+            break;
+          } else if (guess < secretNumber) {
+            alert("Số bạn đoán nhỏ hơn số bí mật.");
+          } else if (guess > secretNumber) {
+            alert("Số bạn đoán lớn hơn số bí mật.");
+          }
+        }
+      };
+    </script>
+    <button id="playButton">Chơi</button>
+  </body>
+</html>

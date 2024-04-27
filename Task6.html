@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let count = 0; // Đếm số lượng số nguyên tố đã tìm được
+      let N = 2; // Bắt đầu kiểm tra từ số 2
+
+      while (count < 20) {
+        let prime = 1;
+        for (let i = 2; i <= Math.sqrt(N); i++) {
+          if (N % i === 0) {
+            prime = 0;
+            break;
+          }
+        }
+          if (prime == 1) {
+            count++;
+            console.log(N);
+          }
+          N++;
+        
+      }
+      
+    </script>
+  </body>
+</html>
